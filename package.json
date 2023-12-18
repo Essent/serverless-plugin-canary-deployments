@@ -22,16 +22,16 @@
     "type": "git"
   },
   "dependencies": {
-    "flat": "^4.1.0",
+    "flat": "^6.0.1",
     "lodash": "^4.17.20",
-    "omit-empty": "^0.4.1"
+    "omit-empty": "^1.0.0"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
+    "chai": "^4.3.10",
     "get-installed-path": "^4.0.8",
-    "husky": "^3.0.1",
+    "husky": "^8.0.3",
     "mocha": "^10.2.0",
-    "serverless": "^2.22.0",
+    "serverless": "^3.38.0",
     "standard": "*"
   },
   "peerDependencies": {
