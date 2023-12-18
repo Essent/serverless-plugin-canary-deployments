@@ -7,7 +7,7 @@
   "description": "A Serverless plugin to implement canary deployment of Lambda functions",
   "main": "serverless-plugin-canary-deployments.js",
   "scripts": {
-    "test": "npm run lint && NODE_ENV=test ./node_modules/mocha/bin/mocha $(find ./ -name '*.test.js' -not -path '.*/node_modules/*')",
+    "test": "npm run lint && NODE_ENV=test mocha $(find ./ -name '*.test.js' -not -path '.*/node_modules/*')",
     "watch": "NODE_ENV=test ./node_modules/mocha/bin/mocha -w $(find ./ -name '*.test.js' -not -path '*/node_modules/*')",
     "lint": "standard"
   },
@@ -30,7 +30,7 @@
     "chai": "^4.2.0",
     "get-installed-path": "^4.0.8",
     "husky": "^3.0.1",
-    "mocha": "^8.2.1",
+    "mocha": "^10.2.0",
     "serverless": "^2.22.0",
     "standard": "*"
   },
