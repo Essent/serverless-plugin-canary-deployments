@@ -1,3 +1,6 @@
+# 0.9.2 (19.12.2023)
+- Ignore testing and CI files in npm package
+
 # 0.9.1 (19.12.2023)
 - Update README to reflect changes
 
