@@ -1,10 +1,11 @@
-const _ = require('lodash/fp')
-const flattenObject = require('flat')
-const CfGenerators = require('./lib/CfTemplateGenerators')
-const {
+import { flatten as flattenObject } from 'flat'
+
+import _ from 'lodash/fp.js'
+import * as CfGenerators from './lib/CfTemplateGenerators/index.js'
+import {
   customPropertiesSchema,
   functionPropertiesSchema
-} = require('./configSchemas')
+} from './configSchemas/index.js'
 
 const slsHasConfigSchema = sls =>
   sls.configSchemaHandler &&
@@ -176,7 +177,7 @@ class ServerlessCanaryDeployments {
       afterHook,
       beforeHook
     }
-    const template = CfGenerators.lambda.buildAlias({
+    const template = CfGenerators.Lambda.buildAlias({
       alias,
       functionName,
       functionVersion,
@@ -200,7 +201,7 @@ class ServerlessCanaryDeployments {
   buildPermissionsForAlias ({ functionName, functionAlias }) {
     const permissions = this.getLambdaPermissionsFor(functionName)
     return _.entries(permissions).map(([logicalName, template]) => {
-      const templateWithAlias = CfGenerators.lambda
+      const templateWithAlias = CfGenerators.Lambda
         .replacePermissionFunctionWithAlias(template, functionAlias)
       return { [logicalName]: templateWithAlias }
     })
@@ -208,7 +209,7 @@ class ServerlessCanaryDeployments {
 
   buildEventsForAlias ({ functionName, functionAlias }) {
     const replaceAliasStrategy = {
-      'AWS::Lambda::EventSourceMapping': CfGenerators.lambda.replaceEventMappingFunctionWithAlias,
+      'AWS::Lambda::EventSourceMapping': CfGenerators.Lambda.replaceEventMappingFunctionWithAlias,
       'AWS::ApiGateway::Method': CfGenerators.apiGateway.replaceMethodUriWithAlias,
       'AWS::ApiGatewayV2::Integration': CfGenerators.apiGateway.replaceV2IntegrationUriWithAlias,
       'AWS::ApiGatewayV2::Authorizer': CfGenerators.apiGateway.replaceV2AuthorizerUriWithAlias,
@@ -443,4 +444,4 @@ class ServerlessCanaryDeployments {
   }
 }
 
-module.exports = ServerlessCanaryDeployments
+export default ServerlessCanaryDeployments
