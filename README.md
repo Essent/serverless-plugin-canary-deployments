@@ -1,4 +1,4 @@
-[![npm version](https://badge.fury.io/js/@essent/serverless-plugin-canary-deployments.svg)](https://badge.fury.io/js/@essent/serverless-plugin-canary-deployments)
+[![npm version](https://badge.fury.io/js/@essent%2Fserverless-plugin-canary-deployments.svg)](https://badge.fury.io/js/@essent%2Fserverless-plugin-canary-deployments)
 
 # Serverless Plugin Canary Deployments
 
@@ -120,7 +120,7 @@ For now, the plugin only works with Lambda functions invoked by
 * IoT rules
 * AppSync DataSources
 
-[More events](https://serverless.com/framework/docs/providers/aws/events/) will be added soon.
+Using a Lambda that also has provisionedConcurrency set up will cause the permissions to break, ending in a state where the API gateway is not allowed to invoke the Lambda. Do not combine the two until this is fixed.
 
 ## <a name="license"></a>License
 
