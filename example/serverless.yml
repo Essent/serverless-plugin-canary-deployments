@@ -11,7 +11,7 @@ provider:
         - "*"
 plugins:
   - serverless-plugin-aws-alerts
-  - serverless-plugin-canary-deployments
+  - '@essent/serverless-plugin-canary-deployments'
 
 custom:
   alerts:
