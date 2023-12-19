@@ -1,3 +1,13 @@
+# 0.9.1 (19.12.2023)
+- Update README to reflect changes
+
+# 0.9.0 (19.12.2023)
+
+- **Breaking:** Update to Serverless version 3
+- **Breaking:** Update to node 16
+- Use ESM style imports
+- Bump `flat`, `omit-empty`, `chai`, and `mocha` to the latest version
+
 # 0.8.0 (11.04.2022)
 - Add support for AppSync #144
 
