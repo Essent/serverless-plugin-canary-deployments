@@ -1,7 +1,7 @@
 {
   "name": "serverless-plugin-canary-deployments",
   "engines": {
-    "node": ">=18.0"
+    "node": ">=16.0"
   },
   "version": "0.8.0",
   "description": "A Serverless plugin to implement canary deployment of Lambda functions",
